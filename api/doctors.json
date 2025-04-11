@@ -1,0 +1,165 @@
+openapi: 3.0.0
+info:
+  title: Doctor Directory API
+  version: 1.0.0
+  description: API to retrieve doctor information based on specialization and location.
+
+paths:
+  /doctors:
+    get:
+      summary: Get a list of doctors
+      description: Retrieve a list of doctors with optional filters for specialization and location.
+      parameters:
+        - in: query
+          name: specialization
+          schema:
+            type: string
+          description: Filter by medical specialization
+        - in: query
+          name: location
+          schema:
+            type: string
+          description: Filter by city/location
+      responses:
+        '200':
+          description: A list of doctors
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  doctors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        specialization:
+                          type: string
+                        location:
+                          type: string
+              example:
+                doctors:
+                  - id: "doc_001"
+                    name: "Dr. Aisha Khan"
+                    specialization: "Dermatologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_002"
+                    name: "Dr. Rohan Mehta"
+                    specialization: "Cardiologist"
+                    location: "Margao, Goa"
+                  - id: "doc_003"
+                    name: "Dr. Neha Singh"
+                    specialization: "Pediatrician"
+                    location: "Mapusa, Goa"
+                  - id: "doc_004"
+                    name: "Dr. Sameer Joshi"
+                    specialization: "Orthopedic Surgeon"
+                    location: "Mapusa, Goa"
+                  - id: "doc_005"
+                    name: "Dr. Tanvi Desai"
+                    specialization: "Psychiatrist"
+                    location: "Porvorim, Goa"
+                  - id: "doc_006"
+                    name: "Dr. Arjun Kapoor"
+                    specialization: "Neurologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_007"
+                    name: "Dr. Meera Nair"
+                    specialization: "Gynecologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_008"
+                    name: "Dr. Vikram Sinha"
+                    specialization: "General Physician"
+                    location: "Margao, Goa"
+                  - id: "doc_009"
+                    name: "Dr. Shweta Chodankar"
+                    specialization: "ENT Specialist"
+                    location: "Mapusa, Goa"
+                  - id: "doc_010"
+                    name: "Dr. Rajeev Menon"
+                    specialization: "Endocrinologist"
+                    location: "Vasco, Goa"
+                  - id: "doc_011"
+                    name: "Dr. Kriti Pednekar"
+                    specialization: "Ophthalmologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_012"
+                    name: "Dr. Deepak Chawla"
+                    specialization: "Pulmonologist"
+                    location: "Margao, Goa"
+                  - id: "doc_013"
+                    name: "Dr. Anjali Verma"
+                    specialization: "Rheumatologist"
+                    location: "Porvorim, Goa"
+                  - id: "doc_014"
+                    name: "Dr. Nikhil Agarwal"
+                    specialization: "Oncologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_015"
+                    name: "Dr. Sneha Pillai"
+                    specialization: "ENT Specialist"
+                    location: "Margao, Goa"
+                  - id: "doc_016"
+                    name: "Dr. Faizan Ali"
+                    specialization: "Urologist"
+                    location: "Panjim, Goa"
+                  - id: "doc_017"
+                    name: "Dr. Kavita Shett"
+                    specialization: "Allergist"
+                    location: "Margao, Goa"
+                  - id: "doc_018"
+                    name: "Dr. Manish Rawat"
+                    specialization: "Urologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_019"
+                    name: "Dr. Ritu Singh"
+                    specialization: "Immunologist"
+                    location: "Mapusa, Goa"
+                  - id: "doc_020"
+                    name: "Dr. Ajay Tiwari"
+                    specialization: "Dermatologist"
+                    location: "Vasco, Goa"
+                  - id: "doc_021"
+                    name: "Dr. Bhavana Reddy"
+                    specialization: "Gastroenterologist"
+                    location: "Vasco, Goa"
+                  - id: "doc_022"
+                    name: "Dr. Karan Thakkar"
+                    specialization: "Pediatrician"
+                    location: "Mapusa, Goa"
+                  - id: "doc_023"
+                    name: "Dr. Malvika Iyer"
+                    specialization: "Pathologist"
+                    location: "Mapusa, Goa"
+                  - id: "doc_024"
+                    name: "Dr. Zoya Khan"
+                    specialization: "General Physician"
+                    location: "Margao, Goa"
+                  - id: "doc_025"
+                    name: "Dr. Harsh Vardhan"
+                    specialization: "Allergist"
+                    location: "Panaji, Goa"
+                  - id: "doc_26"
+                    name: "Dr. Meena Pednekar"
+                    specialization: "Pulmonologist"
+                    location: "Panaji, Goa"
+                  - id: "doc_27"
+                    name: "Dr. Talia Dsouza"
+                    specialization: "Cardiologist"
+                    location: "Margao, Goa"
+                  - id: "doc_28"
+                    name: "Dr. Alisha Dcuz"
+                    specialization: "Dentist"
+                    location: "Panaji, Goa"
+                  - id: "doc_29"
+                    name: "Dr. Zoie Dsouza"
+                    specialization: "Dentist"
+                    location: "Margao, Goa"
+                  - id: "doc_030"
+                    name: "Dr. Lester Dsouza"
+                    specialization: "Ophthalmologist"
+                    location: "Mapusa, Goa"
