@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://run.mocky.io/v3/d1a435e9-88f3-4d13-b545-91869f0c111e"
+      "url": "https://iwonadesouza.github.io/mock-api.github.io/api/watermonitoring.json"
     }
   ],
   "paths": {
@@ -18,12 +18,43 @@
         "parameters": [
           {
             "in": "query",
-            "name": "water_body",
+            "name": "name",
             "schema": {
               "type": "string"
             },
-            "required": false,
-            "description": "Optional name of the lake (e.g., Bellandur Lake)"
+            "description": "Name of the lake (e.g., Bellandur Lake)"
+          },
+          {
+            "in": "query",
+            "name": "pH",
+            "schema": {
+              "type": "number"
+            },
+            "description": "pH of the lake (e.g., Bellandur Lake)"
+          },
+          {
+            "in": "query",
+            "name": "toxicity",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Toxicity of the lake (e.g., Bellandur Lake)"
+          },
+          {
+            "in": "query",
+            "name": "pollutants",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Pollutants in the lake (e.g., Bellandur Lake)"
+          },
+          {
+            "in": "query",
+            "name": "filtered",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Lake is filtered or not"
           }
         ],
         "responses": {
