@@ -23,38 +23,6 @@
               "type": "string"
             },
             "description": "Name of the lake (e.g., Bellandur Lake)"
-          },
-          {
-            "in": "query",
-            "name": "pH",
-            "schema": {
-              "type": "number"
-            },
-            "description": "pH of the lake (e.g., Bellandur Lake)"
-          },
-          {
-            "in": "query",
-            "name": "toxicity",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Toxicity of the lake (e.g., Bellandur Lake)"
-          },
-          {
-            "in": "query",
-            "name": "pollutants",
-            "schema": {
-              "type": "string"
-            },
-            "description": "Pollutants in the lake (e.g., Bellandur Lake)"
-          },
-          {
-            "in": "query",
-            "name": "filtered",
-            "schema": {
-              "type": "boolean"
-            },
-            "description": "Lake is filtered or not"
           }
         ],
         "responses": {
@@ -92,89 +60,94 @@
                         "type": "boolean"
                       }
                     }
-                  },
-                  "example": [
-                    {
-                      "name": "Bellandur Lake",
-                      "type": "lake",
-                      "pH": 6.8,
-                      "toxicity": "moderate",
-                      "pollutants": ["Lead", "Mercury", "Nitrates"],
-                      "filtered": false
-                    },
-                    {
-                      "name": "Hebbal Lake",
-                      "type": "lake",
-                      "pH": 7.2,
-                      "toxicity": "low",
-                      "pollutants": ["Nitrates"],
-                      "filtered": true
-                    },
-                    {
-                      "name": "Ulsoor Lake",
-                      "type": "lake",
-                      "pH": 7.0,
-                      "toxicity": "low",
-                      "pollutants": ["Phosphates", "Coliform"],
-                      "filtered": true
-                    },
-                    {
-                      "name": "Varthur Lake",
-                      "type": "lake",
-                      "pH": 6.5,
-                      "toxicity": "high",
-                      "pollutants": ["Lead", "Cadmium", "Oil Residue"],
-                      "filtered": false
-                    },
-                    {
-                      "name": "Madiwala Lake",
-                      "type": "lake",
-                      "pH": 7.1,
-                      "toxicity": "moderate",
-                      "pollutants": ["Ammonia", "Nitrates"],
-                      "filtered": false
-                    },
-                    {
-                      "name": "Lalbagh Lake",
-                      "type": "lake",
-                      "pH": 7.3,
-                      "toxicity": "low",
-                      "pollutants": ["Organic Matter"],
-                      "filtered": true
-                    },
-                    {
-                      "name": "Puttenahalli Lake",
-                      "type": "lake",
-                      "pH": 6.9,
-                      "toxicity": "low",
-                      "pollutants": ["Phosphates"],
-                      "filtered": true
-                    },
-                    {
-                      "name": "Agara Lake",
-                      "type": "lake",
-                      "pH": 7.0,
-                      "toxicity": "moderate",
-                      "pollutants": ["Nitrates", "Algae Bloom"],
-                      "filtered": false
-                    },
-                    {
-                      "name": "Jakkur Lake",
-                      "type": "lake",
-                      "pH": 7.4,
-                      "toxicity": "low",
-                      "pollutants": ["Organic Matter", "Phosphates"],
-                      "filtered": true
-                    },
-                    {
-                      "name": "Sankey Tank",
-                      "type": "lake",
-                      "pH": 7.5,
-                      "toxicity": "low",
-                      "pollutants": ["Algae Bloom"],
-                      "filtered": true
-                    }
-                  ]
+                  }
+                },
+                "examples": {
+                  "sampleData": {
+                    "summary": "Sample lake data",
+                    "value": [
+                      {
+                        "name": "Bellandur Lake",
+                        "type": "lake",
+                        "pH": 6.8,
+                        "toxicity": "moderate",
+                        "pollutants": ["Lead", "Mercury", "Nitrates"],
+                        "filtered": false
+                      },
+                      {
+                        "name": "Hebbal Lake",
+                        "type": "lake",
+                        "pH": 7.2,
+                        "toxicity": "low",
+                        "pollutants": ["Nitrates"],
+                        "filtered": true
+                      },
+                      {
+                        "name": "Ulsoor Lake",
+                        "type": "lake",
+                        "pH": 7.0,
+                        "toxicity": "low",
+                        "pollutants": ["Phosphates", "Coliform"],
+                        "filtered": true
+                      },
+                      {
+                        "name": "Varthur Lake",
+                        "type": "lake",
+                        "pH": 6.5,
+                        "toxicity": "high",
+                        "pollutants": ["Lead", "Cadmium", "Oil Residue"],
+                        "filtered": false
+                      },
+                      {
+                        "name": "Madiwala Lake",
+                        "type": "lake",
+                        "pH": 7.1,
+                        "toxicity": "moderate",
+                        "pollutants": ["Ammonia", "Nitrates"],
+                        "filtered": false
+                      },
+                      {
+                        "name": "Lalbagh Lake",
+                        "type": "lake",
+                        "pH": 7.3,
+                        "toxicity": "low",
+                        "pollutants": ["Organic Matter"],
+                        "filtered": true
+                      },
+                      {
+                        "name": "Puttenahalli Lake",
+                        "type": "lake",
+                        "pH": 6.9,
+                        "toxicity": "low",
+                        "pollutants": ["Phosphates"],
+                        "filtered": true
+                      },
+                      {
+                        "name": "Agara Lake",
+                        "type": "lake",
+                        "pH": 7.0,
+                        "toxicity": "moderate",
+                        "pollutants": ["Nitrates", "Algae Bloom"],
+                        "filtered": false
+                      },
+                      {
+                        "name": "Jakkur Lake",
+                        "type": "lake",
+                        "pH": 7.4,
+                        "toxicity": "low",
+                        "pollutants": ["Organic Matter", "Phosphates"],
+                        "filtered": true
+                      },
+                      {
+                        "name": "Sankey Tank",
+                        "type": "lake",
+                        "pH": 7.5,
+                        "toxicity": "low",
+                        "pollutants": ["Algae Bloom"],
+                        "filtered": true
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -191,3 +164,4 @@
   },
   "components": {}
 }
+
