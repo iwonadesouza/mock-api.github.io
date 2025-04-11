@@ -1,0 +1,162 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Bangalore Water Quality API",
+    "version": "1.0.0",
+    "description": "API to fetch water quality parameters for lakes around Bangalore. Provides details such as pH level, toxicity, pollutants, and filtration status."
+  },
+  "servers": [
+    {
+      "url": "https://run.mocky.io/v3/d1a435e9-88f3-4d13-b545-91869f0c111e"
+    }
+  ],
+  "paths": {
+    "/water-quality": {
+      "get": {
+        "summary": "Get water quality data for lakes in Bangalore",
+        "description": "Returns water quality index for lakes in Bangalore.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "water_body",
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "description": "Optional name of the lake (e.g., Bellandur Lake)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of water quality measurements",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": ["lake"]
+                      },
+                      "pH": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "toxicity": {
+                        "type": "string",
+                        "enum": ["low", "moderate", "high"]
+                      },
+                      "pollutants": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "filtered": {
+                        "type": "boolean"
+                      }
+                    }
+                  },
+                  "example": [
+                    {
+                      "name": "Bellandur Lake",
+                      "type": "lake",
+                      "pH": 6.8,
+                      "toxicity": "moderate",
+                      "pollutants": ["Lead", "Mercury", "Nitrates"],
+                      "filtered": false
+                    },
+                    {
+                      "name": "Hebbal Lake",
+                      "type": "lake",
+                      "pH": 7.2,
+                      "toxicity": "low",
+                      "pollutants": ["Nitrates"],
+                      "filtered": true
+                    },
+                    {
+                      "name": "Ulsoor Lake",
+                      "type": "lake",
+                      "pH": 7.0,
+                      "toxicity": "low",
+                      "pollutants": ["Phosphates", "Coliform"],
+                      "filtered": true
+                    },
+                    {
+                      "name": "Varthur Lake",
+                      "type": "lake",
+                      "pH": 6.5,
+                      "toxicity": "high",
+                      "pollutants": ["Lead", "Cadmium", "Oil Residue"],
+                      "filtered": false
+                    },
+                    {
+                      "name": "Madiwala Lake",
+                      "type": "lake",
+                      "pH": 7.1,
+                      "toxicity": "moderate",
+                      "pollutants": ["Ammonia", "Nitrates"],
+                      "filtered": false
+                    },
+                    {
+                      "name": "Lalbagh Lake",
+                      "type": "lake",
+                      "pH": 7.3,
+                      "toxicity": "low",
+                      "pollutants": ["Organic Matter"],
+                      "filtered": true
+                    },
+                    {
+                      "name": "Puttenahalli Lake",
+                      "type": "lake",
+                      "pH": 6.9,
+                      "toxicity": "low",
+                      "pollutants": ["Phosphates"],
+                      "filtered": true
+                    },
+                    {
+                      "name": "Agara Lake",
+                      "type": "lake",
+                      "pH": 7.0,
+                      "toxicity": "moderate",
+                      "pollutants": ["Nitrates", "Algae Bloom"],
+                      "filtered": false
+                    },
+                    {
+                      "name": "Jakkur Lake",
+                      "type": "lake",
+                      "pH": 7.4,
+                      "toxicity": "low",
+                      "pollutants": ["Organic Matter", "Phosphates"],
+                      "filtered": true
+                    },
+                    {
+                      "name": "Sankey Tank",
+                      "type": "lake",
+                      "pH": 7.5,
+                      "toxicity": "low",
+                      "pollutants": ["Algae Bloom"],
+                      "filtered": true
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (e.g., invalid parameters)"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
